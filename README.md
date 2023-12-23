@@ -1,6 +1,6 @@
 # Cheater
 
-Cheater is a Python script designed to update a private GitHub repository 1-3 times a day. The script utilizes the GitHub API for Python (PyGithub) and the schedule library for job scheduling.
+Cheater is a Python script designed to update a private GitHub repository anywhere from 0-4 times a day. The script utilizes the GitHub API for Python (PyGithub) and the schedule library for job scheduling.
 
 [Why your Github commits dont matter](https://www.youtube.com/watch?v=hhFJizcY5Wg)
 
