@@ -8,6 +8,6 @@ Cheater is a Python script designed to update a private GitHub repository 1-3 ti
 
 Before running the script, make sure to install the required libraries by running the following command:
 
-```pip install PyGithub schedule```
+```pip install PyGithub, schedule```
 
 Replace 'YOUR_GITHUB_TOKEN', 'your_username', and 'your_repo_name' with your GitHub personal access token, GitHub username, and the name of your private repository, respectively.
