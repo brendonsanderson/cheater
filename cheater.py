@@ -1,5 +1,6 @@
 import schedule
 import time
+import random
 from datetime import datetime
 from github import Github
 
@@ -25,13 +26,19 @@ def update_github_repo():
     file_content = f"Update at {timestamp}"
     file_path = "update_file.txt"
 
+    # Get the default branch (assuming it's 'main')
+    default_branch = repo.get_branch(repo.default_branch)
+    
     repo.create_file(file_path, f"Auto-update at {timestamp}", file_content, branch="main")
 
     print(f"Repository updated at {timestamp}")
 
-# Schedule the job to run 1-3 times a day
-# You can adjust the schedule frequency as needed
-schedule.every(8).hours.do(update_github_repo)
+# Schedule the job to run 0-4 times a day with some variability
+for _ in range(random.randint(0, 4)):
+    # Randomly choose a time to run the job
+    hours = random.randint(0, 23)
+    minutes = random.randint(0, 59)
+    schedule.every().day.at(f"{hours:02d}:{minutes:02d}").do(update_github_repo)
 
 # Run the scheduled job continuously
 while True:
